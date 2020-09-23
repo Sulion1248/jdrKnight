@@ -1,0 +1,111 @@
+{
+"Actor": {
+  "types": ["character"],
+  "character": {
+    "biography": "",
+    "health": {
+      "value": 10,
+      "min": 0,
+      "max": 10
+    },
+    "Armor": {
+      "value": 10,
+      "min": 0,
+      "max": 10
+    },
+    "energy": {
+      "value": 10,
+      "min": 0,
+      "max": 10
+    },
+    "grenade": {
+      "value": 5,
+      "min": 0,
+      "max": 5
+    },
+    "healthNod": {
+      "value": 3,
+      "min": 0,
+      "max": 3
+    },    
+    "energyNod": {
+      "value": 3,
+      "min": 0,
+      "max": 3
+    },
+    "shieldNod": {
+      "value": 3,
+      "min": 0,
+      "max": 3
+    },
+    "aspect": {
+      "Chair": {
+        "aspectLevel": 2,
+        "attributes": 
+        {"Deplacement": 1,
+          "Force": 1,
+          "Endurance": 1
+      }
+      },
+      "Masque": {
+        "aspectLevel": 2,
+        "attributes": {
+          "Discretion": 1,
+          "Dexterite": 1,
+          "Perception": 1
+        }
+      },
+      "Dame": {
+        "aspectLevel": 2,
+        "attributes": {
+          "Aura": 1,
+          "SangFroid": 1,
+          "Parole": 1
+        }
+      },
+      "Bete": {
+        "aspectLevel": 2,
+        "attributes": {
+          "Combat": 1,
+          "Hargne": 1,
+          "Instinct": 1
+        }
+      },
+      "Machine": {
+        "aspectLevel": 2,
+        "attributes": {
+          "Technique": 1,
+          "Savoir": 1,
+          "Tir": 1
+        }
+      }
+    },
+    "cards": {
+      "types": ["card"],
+      "card": {
+        "name": "",
+        "effect": "",
+        "bonus": {
+          "aspect": {
+            "name": "",
+            "value": 0
+          },          
+          "attribute": {
+            "name": "",
+            "value": 0
+          }
+        }
+      }
+    }
+  }
+},
+"Item": {
+  "types": ["item"],
+  "item": {
+    "description": "",
+    "quantity": 1,
+    "weight": 0,
+    "attributes": {}
+  }
+}
+}
