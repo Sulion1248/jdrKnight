@@ -40,43 +40,48 @@
     },
     "aspect": {
       "Chair": {
+	    "name": "Chair",
         "aspectLevel": 2,
         "attributes": 
-        {"Deplacement": 1,
-          "Force": 1,
-          "Endurance": 1
+        {"Deplacement": {"name": "Deplacement","value": 1},
+          "Force": {"name": "Force","value": 1},
+          "Endurance": {"name": "Endurance","value": 1}
       }
       },
       "Masque": {
+	    "name": "Masque",
         "aspectLevel": 2,
         "attributes": {
-          "Discretion": 1,
-          "Dexterite": 1,
-          "Perception": 1
+          "Discretion": {"name": "Discretion","value": 1},
+          "Dexterite": {"name": "Dextérite","value": 1},
+          "Perception": {"name": "Perception","value": 1}
         }
       },
       "Dame": {
+	    "name": "Dame",
         "aspectLevel": 2,
         "attributes": {
-          "Aura": 1,
-          "SangFroid": 1,
-          "Parole": 1
+          "Aura": {"name": "Aura","value": 1},
+          "SangFroid": {"name": "SangFroid","value": 1},
+          "Parole": {"name": "Parole","value": 1}
         }
       },
       "Bete": {
+	    "name": "Bête",
         "aspectLevel": 2,
         "attributes": {
-          "Combat": 1,
-          "Hargne": 1,
-          "Instinct": 1
+          "Combat": {"name": "Combat","value": 1},
+          "Hargne": {"name": "Hargne","value": 1},
+          "Instinct": {"name": "Instinct","value": 1}
         }
       },
       "Machine": {
+	    "name": "Machine",
         "aspectLevel": 2,
         "attributes": {
-          "Technique": 1,
-          "Savoir": 1,
-          "Tir": 1
+          "Technique": {"name": "Technique","value": 1},
+          "Savoir": {"name": "Savoir","value": 1},
+          "Tir": {"name": "Tir","value": 1}
         }
       }
     },

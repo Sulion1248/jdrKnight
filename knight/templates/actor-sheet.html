@@ -2,18 +2,18 @@
 
     {{!-- Sheet Header --}}
     <header class="sheet-header">
-        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
         <div class="header-fields">
-            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
             <div class="resource">
-                <input type="text" name="data.health.value" value="{{data}}" data-dtype="Number"/>
+                <input type="text" name="data.health.value" value="{{data.health.value}}" data-dtype="Number disabled=" disabled"" />
                 <span> / </span>
-                <input type="text" name="data.health.max" value="{{data.health.max}}" data-dtype="Number"/>
+                <input type="text" name="data.health.max" value="{{data.health.max}}" data-dtype="Number disabled=" disabled"" />
             </div>
             <div class="resource">
-                <input type="text" name="data.power.value" value="{{data.power.value}}" data-dtype="Number"/>
+                <input type="text" name="data.energy.value" value="{{data.energy.value}}" data-dtype="Number disabled=" disabled"" />
                 <span> / </span>
-                <input type="text" name="data.power.max" value="{{data.power.max}}" data-dtype="Number"/>
+                <input type="text" name="data.energy.max" value="{{data.energy.max}}" data-dtype="Number disabled=" disabled"" />
             </div>
         </div>
     </header>
@@ -27,70 +27,50 @@
 
     {{!-- Sheet Body --}}
     <section class="sheet-body">
-      <div class="tab attributes" data-group="primary" data-tab="attributes">
+        <div class="tab attributes" data-group="primary" data-tab="description">
 
-      {{!-- Health Bar and Consumable --}}
-      
-        <label  class="health bar-label"> Vie: </label>
-        <input  type="text"  name="data.health.value"  value="{{data.health.value}}"  data-dtype="Number"/>
+            {{!-- Health Bar and Consumable --}}
 
-        <label  class="armor bar-label"> Armure: </label>
-        <input  type="text"  name="data.armor.value"  value="{{data.armor.value}}"  data-dtype="Number"/>
+            <label class="armor bar-label"> Armure: </label>
+            <input type="text" name="data.Armor.value" value="{{data.Armor.value}}" data-dtype="Number" />
 
-        <label  class="energie bar-label"> Energie: </label>
-        <input  type="text"  name="data.energie.value"  value="{{data.energie.value}}"  data-dtype="Number"/>
+            <label class="healthNod nodv"> nods de vie: </label>
+            <input type="text" name="data.healthNod.value" value="{{data.healthNod.value}}" data-dtype="Number" />
 
-        <label  class="healthNod nod"> nods de vie: </label>
-        <input  type="text"  name="data.healthNod.value"  value="{{data.healthNod.value}}"  data-dtype="Number"/>
+            <label class="armorNod noda"> nods de bouclier: </label>
+            <input type="text" name="data.shieldNod.value" value="{{data.shieldNod.value}}" data-dtype="Number" />
 
-        <label  class="armorNod nod"> nods de bouclier: </label>
-        <input  type="text"  name="data.healthNod.value"  value="{{data.shieldNod.value}}"  data-dtype="Number"/>
+            <label class="energyNod node"> nods d'énergie: </label>
+            <input type="text" name="data.energyNod.value" value="{{data.energyNod.value}}" data-dtype="Number" />
 
-        <label  class="energyNod nod"> nods d'énergie: </label>
-        <input  type="text"  name="data.healthNod.value"  value="{{data.energieNod.value}}"  data-dtype="Number"/>
-
-        <label  class="grenade"> grenades: </label>
-        <input  type="text"  name="data.grenade.value"  value="{{data.grenade.value}}"  data-dtype="Number"/>
-
-
-      {{!-- Attributes Tab --}}
-        <ol  class="aspect-list">
-
-          {{#each actor.data.asspect as |asspect key|}}
-            
-          <li  class="asspect flexrow"  data-asspect="{{key}}">
-            
-          <span  class="asspect-label flexrow"  name="data.asspect.{{key}}.label">{{label}}</span>
-            
-          <div  class="asspect-editbox flexrow">
-            
-          <input  class="asspect-value"  type="text"  name="data.asspect.{{key}}.aspectLevel"  value="{{asspect.aspectLevel}}"  data-dtype="Number"  />
-            
-          </div>  
-          <ol  class="attributes-list">
-
-            {{#each assepect.attributes as |attrib key|}}
-              
-            <li  class="attribute flexrow"  data-attribute="{{key}}">
-              
-            <span  class="attribute-label flexrow"  name="data.attributes.{{key}}.label">{{label}}</span>
-              
-            <div  class="attribute-editbox flexrow">
-              
-            <input  class="attribute-value"  type="text"  name="data.attributes.{{key}}.value"  value="{{attrib.value}}"  data-dtype="Number"  />
-              
-            </div>  
-            </li>
-              
-            {{/each}}
-              
+            <label class="grenade"> grenades: </label>
+            <input type="text" name="data.grenade.value" value="{{data.grenade.value}}" data-dtype="Number" />
+        </div>
+        {{!-- Owned Items Tab --}}
+        <div class="tab items" data-group="primary" data-tab="items">
+            <ol class="aspect-list">
+                {{#each actor.data.aspect as |aspect id|}}
+                <li class="aspect flexrow" data-aspect="{{aspect}}">
+                    <h4 class="aspect-name">{{aspect.name}}</h4>
+                    <span class="aspect-value">{{aspect.aspectLevel}}</span>
+                    <div class="aspect-controls">
+                        <a class="aspect-control aspect-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                        <ol class="attributes-list">
+                            {{#each aspect.attributes as |attr key|}}
+                            <li class="attribute flexrow" data-attribute="{{attr}}">
+                                <h4 class="attr-name">{{attr.name}}</h4>
+                                <label class="attr-value checkbox"><input type="checkbox" name="attr.value" /></label>
+                                <h4 class="attr-name">{{attr.value}}</h4>
+                            </li>
+                            {{/each}}
+                        </ol>
+                    </div>
+                </li>
+                {{/each}}
             </ol>
-          </li>
-            
-          {{/each}}
-            
-          </ol>
-      </div>
+        </div>
+
     </section>
 </form>
+
 
